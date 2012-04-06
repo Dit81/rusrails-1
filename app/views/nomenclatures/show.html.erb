@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @nomenclature.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @nomenclature.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @nomenclature.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_nomenclature_path(@nomenclature) %> |
+<%= link_to 'Back', nomenclatures_path %>

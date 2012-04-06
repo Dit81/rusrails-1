@@ -1,0 +1,27 @@
+<h1>Listing nomenclatures</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nomenclatures.each do |nomenclature| %>
+  <tr>
+    <td><%= nomenclature.name %></td>
+    <td><%= nomenclature.title %></td>
+    <td><%= nomenclature.content %></td>
+    <td><%= link_to 'Show', nomenclature %></td>
+    <td><%= link_to 'Edit', edit_nomenclature_path(nomenclature) %></td>
+    <td><%= link_to 'Destroy', nomenclature, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nomenclature', new_nomenclature_path %>

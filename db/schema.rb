@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120209040931) do
+ActiveRecord::Schema.define(:version => 20120312060525) do
+
+  create_table "books", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -22,6 +35,32 @@ ActiveRecord::Schema.define(:version => 20120209040931) do
   end
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
+
+  create_table "nomenclatures", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.datetime "order_date"
+    t.string   "order_number"
+    t.integer  "client_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.datetime "birth_date"
+    t.integer  "city_id"
+    t.binary   "picture"
+    t.boolean  "activated"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"
@@ -36,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20120209040931) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.decimal  "price"
   end
 
   create_table "tags", :force => true do |t|

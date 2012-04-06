@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= simple_format @post.to_yaml %>
 <p>
   <b>Name:</b>
   <%= @post.name %>
 </p>
+
+<%= debug @post %>
 
 <p>
   <b>Title:</b>

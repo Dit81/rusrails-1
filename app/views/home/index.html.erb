@@ -1,3 +1,17 @@
 ﻿<h1>Hello, Rails!</h1><p>Find me in app/views/home/index.html.erb</p>
+<h1><%=t :hello_world %></h1>
+<p><%= flash[:notice] %></p>
+<%=t 'greet_username', :user => "Bill", :message => "Goodbye" %>
+<p><%= l Time.now, :format => :short %></p>
 
 <%= link_to "Мой блог", posts_path %>
+
+
+<%= link_to "Books", books_path %>
+
+<%= link_to "Номенклатура", nomenclatures_path %>
+
+<%= link_to "Люди", people_path %>
+
+
+

@@ -6,13 +6,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do 
-    gem 'sqlite3' # ,'1.3.3', :group => :development
- end 
+# group :development do 
+    # gem 'sqlite3' # ,'1.3.3', :group => :development
+ # end 
 
-group :production do 
+# group :production do 
    gem 'pg' 
- end
+ # end
 
 # Gems used only for assets and not required
 # in production environments by default.
