@@ -10,6 +10,9 @@ source 'https://rubygems.org'
     # gem 'sqlite3' # ,'1.3.3', :group => :development
  # end 
 
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+end
 # group :production do 
    gem 'pg' 
  # end
