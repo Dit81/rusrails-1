@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
+<title>Form: <%= controller.action_name %></title>
+
 <%= image_tag "rails.png" %>
 
-<!-- <%= form_tag("/search", :method => "get") do %>
+
+ <%= form_tag("/search", :method => "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
-<% end %> -->
+<% end %>
+
 <a href="http://www.host96.ru" alt="Бесплатный хостинг HOST96.ru" target="_host96">Бесплатный хостинг HOST96.ru</a>
 <head>
   <title>Rusrails</title>
 </head>
-<body style="background: #EEEEEE;">
+
+<%= stylesheet_link_tag "application" %>
+
+<body class='<%= controller.controller_name %>'>
 
 <%= yield %>
+
+</body>
 
   
 </body>
