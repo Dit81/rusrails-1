@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
- gem 'rails', '3.2.3'
+ gem 'rails', '3.2.7'
 # gem 'rails', '>=3.1.1'
 
 # Bundle edge Rails instead:
@@ -11,7 +11,7 @@ source 'https://rubygems.org'
  # end 
 
 group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+  gem 'therubyracer-heroku', '0.8.1.pre3' , :platform => :ruby
 end
 # group :production do 
    gem 'pg' 
@@ -26,7 +26,9 @@ group :assets do
 #  gem 'coffee-rails', '>= 3.1.1'
   
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+  # gem 'therubyracer', :platforms => :ruby
+  # , :github => 'cowboyd/therubyracer'
+  # , :require => 'v8'
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -34,7 +36,14 @@ end
 gem 'jquery-rails'
 
 gem 'will_paginate'
+# gem 'devise_loginza'
 
+gem 'haml-rails'
+# gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-vkontakte'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
