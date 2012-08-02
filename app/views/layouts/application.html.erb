@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OmniauthDemo</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+       <p class="alert"><%= alert %></p>
+<body>
+
+<section id="head">
+
+    <section id="user">
+        <% if user_signed_in? %>
+            <nav id="nav_user">
+                <ul>
+                    <span><%= current_user.email %></span>
+                    <li><%= link_to "Settings", services_path %>
+                    <li><%= link_to "Sign out", signout_services_path %></li>
+                </ul>
+            </nav>
+        <% else %>
+            <nav id="nav_user">
+                <ul>
+                    <span>Sign in with:</span>                    
+                    <li><%= link_to "Facebook", user_omniauth_authorize_path(:facebook) %></li>
+                    <li><%= link_to "Google", "/auth/google" %></li>
+                    <li><%= link_to "Yahoo", "/auth/yahoo" %>
+                    <li><%= link_to "MyOpenID", "/auth/myopenid" %>
+                    <li><%= link_to "Other", signin_services_path %>
+                </ul>
+            </nav>
+        <% end %>
+    </section>
+
+    <h1>Omniauth <sup>pure</sup></h1>
+</section>
+
+<section id="body">
+    <section id="flash">
+        <% flash.each do |key, value| %>
+            <div class="flash <%= key %> round"><%= value %></div>
+        <% end %>
+    </section>
+</br>
+<%= link_to "Posts", posts_path, :class=> currentpage("posts") %>
+<%= link_to "orders", orders_path, :class=> currentpage("orders") %>
+<%= link_to "clients", clients_path, :class=> currentpage("clients") %>
+<%= link_to "Activated people", '/people/activated', :class=> currentpage("crm_cases") %>
+<%= link_to "people", people_path, :class=> currentpage("people") %>
+<%= link_to "books", books_path, :class=> currentpage("books") %>
+<%= link_to "nomenclatures", nomenclatures_path, :class=> currentpage("nomenclatures") %>
+</br>
+
+    <%= yield %>
+</section>
+
+</body>
+</html>

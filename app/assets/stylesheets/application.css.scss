@@ -12,3 +12,20 @@
  *= require_tree .
 */
 
+a.current {
+    
+  // background-color: yellow;
+      
+color: white;
+font-size: 14px;
+text-decoration: none;
+cursor: pointer;
+margin-right: 3px;
+// display: block;
+padding: 5px 12px;
+// float: left;
+// background-image: url('img/tab_selected_bg.png');
+background-position: bottom;
+background-repeat: repeat-x;
+background-color: #3186AF;
+}
